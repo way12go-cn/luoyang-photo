@@ -237,8 +237,8 @@
 
         <div class="photo-container" id="photo-grid">
             <!-- 43张图片，使用jsDelivr加速链接 -->
-            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/1.jpg" alt="洛阳摄影图1"></div>
-            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/2.jpg" alt="洛阳摄影图2"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/1.jpg" ></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/2.jpg"></div>
             <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/3.jpg" alt="洛阳摄影图3"></div>
             <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/4.jpg" alt="洛阳摄影图4"></div>
             <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/5.jpg" alt="洛阳摄影图5"></div>
@@ -402,19 +402,36 @@
     prevBtn.addEventListener("click", prev);
     nextBtn.addEventListener("click", next);
 
-    // 手机左右滑动切换
+    // 优化手机滑动逻辑 - 绑定到整个弹窗区域，提升体验
     let startX = 0;
-    bigImg.addEventListener("touchstart", e => {
-        startX = e.touches[0].clientX;
-    });
+    let isMoving = false;
 
-    bigImg.addEventListener("touchend", e => {
+    // 触摸开始
+    modal.addEventListener("touchstart", e => {
+        startX = e.touches[0].clientX;
+        isMoving = false;
+    }, { passive: true });
+
+    // 触摸移动（防止误触）
+    modal.addEventListener("touchmove", e => {
+        if (Math.abs(e.touches[0].clientX - startX) > 10) {
+            isMoving = true;
+        }
+    }, { passive: true });
+
+    // 触摸结束
+    modal.addEventListener("touchend", e => {
+        if (!isMoving) return;
         let endX = e.changedTouches[0].clientX;
         let diff = startX - endX;
-        if (Math.abs(diff) > 50) {
-            diff > 0 ? next() : prev();
+        if (Math.abs(diff) > 30) { // 降低触发阈值，更灵敏
+            if (diff > 0) {
+                next(); // 向左滑，下一张
+            } else {
+                prev(); // 向右滑，上一张
+            }
         }
-    });
+    }, { passive: true });
 
     // 电脑键盘左右键切换
     document.addEventListener("keydown", e => {
