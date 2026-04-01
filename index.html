@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>2026/03/24 洛阳拍摄照片集</title>
+    <title>2026/03/24 洛阳摄影图集</title>
     <style>
         * {
             margin: 0;
@@ -112,7 +112,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
+            object-position: center; /* 面部优先：居中裁剪，优先保留核心区域 */
         }
 
         /* 大图弹窗 */
@@ -172,7 +172,7 @@
             touch-action: none;
         }
 
-        /* 手机适配 */
+        /* 手机适配 - 强制每行2张 */
         @media screen and (max-width: 768px) {
             body {
                 padding: 30px 15px;
@@ -189,7 +189,7 @@
             }
 
             .photo-item {
-                width: calc(50% - 6px);
+                width: calc(50% - 6px); /* 精准控制每行2张，减去间距的一半 */
                 border-radius: 8px;
             }
 
@@ -233,52 +233,53 @@
 
     <!-- 相册 -->
     <div class="album-content" id="album">
-        <div class="title">2026/03/24 洛阳拍摄照片集</div>
+        <div class="title">2026/03/24 洛阳摄影图集</div>
 
         <div class="photo-container" id="photo-grid">
-            <div class="photo-item"><img src="1.jpg"></div>
-            <div class="photo-item"><img src="2.jpg"></div>
-            <div class="photo-item"><img src="3.jpg"></div>
-            <div class="photo-item"><img src="4.jpg"></div>
-            <div class="photo-item"><img src="5.jpg"></div>
-            <div class="photo-item"><img src="6.jpg"></div>
-            <div class="photo-item"><img src="7.jpg"></div>
-            <div class="photo-item"><img src="8.jpg"></div>
-            <div class="photo-item"><img src="9.jpg"></div>
-            <div class="photo-item"><img src="10.jpg"></div>
-            <div class="photo-item"><img src="11.jpg"></div>
-            <div class="photo-item"><img src="12.jpg"></div>
-            <div class="photo-item"><img src="13.jpg"></div>
-            <div class="photo-item"><img src="14.jpg"></div>
-            <div class="photo-item"><img src="15.jpg"></div>
-            <div class="photo-item"><img src="16.jpg"></div>
-            <div class="photo-item"><img src="17.jpg"></div>
-            <div class="photo-item"><img src="18.jpg"></div>
-            <div class="photo-item"><img src="19.jpg"></div>
-            <div class="photo-item"><img src="20.jpg"></div>
-            <div class="photo-item"><img src="21.jpg"></div>
-            <div class="photo-item"><img src="22.jpg"></div>
-            <div class="photo-item"><img src="23.jpg"></div>
-            <div class="photo-item"><img src="24.jpg"></div>
-            <div class="photo-item"><img src="25.jpg"></div>
-            <div class="photo-item"><img src="26.jpg"></div>
-            <div class="photo-item"><img src="27.jpg"></div>
-            <div class="photo-item"><img src="28.jpg"></div>
-            <div class="photo-item"><img src="29.jpg"></div>
-            <div class="photo-item"><img src="30.jpg"></div>
-            <div class="photo-item"><img src="31.jpg"></div>
-            <div class="photo-item"><img src="32.jpg"></div>
-            <div class="photo-item"><img src="33.jpg"></div>
-            <div class="photo-item"><img src="34.jpg"></div>
-            <div class="photo-item"><img src="35.jpg"></div>
-            <div class="photo-item"><img src="36.jpg"></div>
-            <div class="photo-item"><img src="37.jpg"></div>
-            <div class="photo-item"><img src="38.jpg"></div>
-            <div class="photo-item"><img src="39.jpg"></div>
-            <div class="photo-item"><img src="40.jpg"></div>
-            <div class="photo-item"><img src="41.jpg"></div>
-            <div class="photo-item"><img src="42.jpg"></div>
-            <div class="photo-item"><img src="43.jpg"></div>
+            <!-- 43张图片，使用jsDelivr加速链接 -->
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/1.jpg" alt="洛阳摄影图1"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/2.jpg" alt="洛阳摄影图2"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/3.jpg" alt="洛阳摄影图3"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/4.jpg" alt="洛阳摄影图4"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/5.jpg" alt="洛阳摄影图5"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/6.jpg" alt="洛阳摄影图6"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/7.jpg" alt="洛阳摄影图7"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/8.jpg" alt="洛阳摄影图8"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/9.jpg" alt="洛阳摄影图9"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/10.jpg" alt="洛阳摄影图10"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/11.jpg" alt="洛阳摄影图11"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/12.jpg" alt="洛阳摄影图12"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/13.jpg" alt="洛阳摄影图13"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/14.jpg" alt="洛阳摄影图14"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/15.jpg" alt="洛阳摄影图15"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/16.jpg" alt="洛阳摄影图16"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/17.jpg" alt="洛阳摄影图17"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/18.jpg" alt="洛阳摄影图18"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/19.jpg" alt="洛阳摄影图19"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/20.jpg" alt="洛阳摄影图20"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/21.jpg" alt="洛阳摄影图21"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/22.jpg" alt="洛阳摄影图22"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/23.jpg" alt="洛阳摄影图23"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/24.jpg" alt="洛阳摄影图24"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/25.jpg" alt="洛阳摄影图25"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/26.jpg" alt="洛阳摄影图26"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/27.jpg" alt="洛阳摄影图27"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/28.jpg" alt="洛阳摄影图28"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/29.jpg" alt="洛阳摄影图29"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/30.jpg" alt="洛阳摄影图30"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/31.jpg" alt="洛阳摄影图31"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/32.jpg" alt="洛阳摄影图32"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/33.jpg" alt="洛阳摄影图33"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/34.jpg" alt="洛阳摄影图34"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/35.jpg" alt="洛阳摄影图35"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/36.jpg" alt="洛阳摄影图36"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/37.jpg" alt="洛阳摄影图37"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/38.jpg" alt="洛阳摄影图38"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/39.jpg" alt="洛阳摄影图39"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/40.jpg" alt="洛阳摄影图40"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/41.jpg" alt="洛阳摄影图41"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/42.jpg" alt="洛阳摄影图42"></div>
+            <div class="photo-item"><img src="https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/43.jpg" alt="洛阳摄影图43"></div>
         </div>
 
         <!-- 大图弹窗 -->
@@ -286,7 +287,7 @@
             <span class="close-btn" id="close-btn">&times;</span>
             <div class="nav-btn prev" id="prevBtn">‹</div>
             <div class="nav-btn next" id="nextBtn">›</div>
-            <img id="enlarged-img" src="" alt="">
+            <img id="enlarged-img" src="" alt="大图预览">
         </div>
     </div>
 
@@ -356,10 +357,10 @@
     let currentIndex = 0;
     let total = items.length;
 
-    // 打开对应图片
+    // 打开对应图片（适配jsDelivr链接）
     function showImg(index) {
         currentIndex = index;
-        bigImg.src = (index + 1) + ".jpg";
+        bigImg.src = `https://cdn.jsdelivr.net/gh/way12go-cn/luoyang-photo@main/${index + 1}.jpg`;
     }
 
     // 点击缩略图打开
